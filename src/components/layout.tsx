@@ -4,6 +4,7 @@ export default function Layout() {
   return (
     <>
       <Outlet />
+      <h2>hihi</h2>
     </>
   );
 }
