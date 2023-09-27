@@ -54,19 +54,19 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(true);
-  // const init = async () => {
-  //   await auth.authStateReady();
-  //   setIsLoading(false);
-  // };
-  // useEffect(() => {
-  //   init();
-  // }, []);
+  const [isLoading, setIsLoading] = useState(true);
+  const init = async () => {
+    await auth.authStateReady();
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    init();
+  }, []);
   return (
     <Wrapper>
       <GlobalStyles />
       <RouterProvider router={router} />
-      {/* {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />} */}
+      {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
     </Wrapper>
   );
 }
