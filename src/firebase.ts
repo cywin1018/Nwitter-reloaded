@@ -1,16 +1,17 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAvzrW3u8ynxz0B58Tv4HUoJ0cAIu9TWuY",
-  authDomain: "nwitter-reloaded-9cd2d.firebaseapp.com",
-  projectId: "nwitter-reloaded-9cd2d",
-  storageBucket: "nwitter-reloaded-9cd2d.appspot.com",
-  messagingSenderId: "544010856717",
-  appId: "1:544010856717:web:654b55fddd5ce085556844"
+  apiKey: "AIzaSyAYIfhj4eNVddfU7NfbyyoGA8H_zVylwB4",
+  authDomain: "nwitter-reloaded-5e3c2.firebaseapp.com",
+  projectId: "nwitter-reloaded-5e3c2",
+  storageBucket: "nwitter-reloaded-5e3c2.appspot.com",
+  messagingSenderId: "264141567679",
+  appId: "1:264141567679:web:8d3de7b4af0f421b7a780a"
 };
-
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);  
+export const auth = getAuth(app);
