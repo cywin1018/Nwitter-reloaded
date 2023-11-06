@@ -45,10 +45,11 @@ export default function CreateAccount() {
         email,
         password
       );
-      //오류 발생부분
+
       await updateProfile(credentials.user, {
         displayName: name,
       });
+      console.log("success for create account");
       navigate("/");
     } catch (e) {
       if (e instanceof FirebaseError) {

@@ -72,7 +72,7 @@ export default function CreateAccount() {
       {error !== "" ? <Error>{error}</Error> : null}
       <Switcher>
         Don`t have an account?
-        <Link to={"/create-account"}>Create one &raar;</Link>
+        <Link to={"/create-account"}>Create one &raquo;</Link>
       </Switcher>
       <GithubButton />
     </Wrapper>

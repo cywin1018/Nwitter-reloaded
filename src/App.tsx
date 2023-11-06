@@ -70,7 +70,7 @@ function App() {
   return (
     <Wrapper>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
     </Wrapper>
   );
