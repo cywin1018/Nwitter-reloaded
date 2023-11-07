@@ -1,4 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -19,13 +20,38 @@ const Menu = styled.div`
 const MenuItem = styled.div`
   cursor: pointer;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  svg {
+    width: 30px;
+    fill: white;
+  }
+  &.log-out {
+    border-color: tomato;
+    svg {
+      fill: tomato;
+    }
+  }
 `;
 
 export default function Layout() {
+  const navigate = useNavigate();
+  const onLogOut = async () => {
+    const ok = confirm("Are you sure you want to log out?");
+    if (ok) {
+      await auth.signOut();
+      navigate("/login");
+    }
+  };
+
   return (
     <Wrapper>
       <Menu>
-        <Link to={"/profile"}>
+        <Link to={"/"}>
           <MenuItem>
             <svg
               fill="currentColor"
@@ -41,7 +67,7 @@ export default function Layout() {
             </svg>
           </MenuItem>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/profile"}>
           <MenuItem>
             <svg
               fill="currentColor"
@@ -53,7 +79,7 @@ export default function Layout() {
             </svg>
           </MenuItem>
         </Link>
-        <MenuItem>
+        <MenuItem onClick={onLogOut} className="log-out">
           <svg
             fill="currentColor"
             viewBox="0 0 20 20"
